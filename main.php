@@ -22,7 +22,7 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>[<?php echo strip_tags($conf['title']); ?>] <?php tpl_pagetitle(); ?></title>
 	<?php tpl_metaheaders(); ?>
-	<link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?php echo DOKU_TPL?>img/favicon.ico" type="image/x-icon" />
 	<?php @include(dirname(__FILE__).'/meta.html'); ?>
 </head>
 <body id="wiki-mylesbraithwaite-com">
@@ -86,6 +86,10 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 		<?php flush(); ?>
 		
 		<div class="span-24 first last" id="footer">
+			<p class="user_info"><small><?php tpl_userinfo(); ?></small></p>
+			<p class="page_info"><small><?php tpl_pageinfo(); ?></small></p>
+			<!--<p class="quiet license"><small><?php tpl_license(false);?></small></p>-->
+			
 			<div class="bar" id="bar__bottom">
 				<div class="bar-left" id="bar__bottomleft">
 					<?php tpl_button('edit'); ?>
@@ -102,8 +106,6 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 				</div>
 				<div class="clearer"></div>
 			</div>
-			
-			<p><small><?php tpl_license(false);?></small></p>
 		</div>
 	</div>
 	<div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug(); ?></div>

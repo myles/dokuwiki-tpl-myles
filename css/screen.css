@@ -87,7 +87,9 @@ body { margin: 0 auto; padding: 0 0 4.5em; }
 #footer .tabs { font-size: 13px; }
 #footer .tabs li { margin-right: 20px; }
 #footer .tabs a { color: #999; text-decoration: none; }
-#footer p.quiet { color: #ccc; }
+#footer p { margin: 0; clear: both; display: inline; }
+#footer p.user_info { float: left; clear: left; }
+#footer p.page_info { float: right; text-align: right; }
 
 /* BUTTON BARS */
 div.bar form, div.bar input, div.bar div { display: inline; }

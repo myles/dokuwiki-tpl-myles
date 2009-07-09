@@ -31,10 +31,10 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 			<div>
 				<?php #tpl_searchform(); ?>
 				<h1 id="site_name"><?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]"'); ?></h1>
-				<ul class="tabs" id="navigation"></ul>
+				<ul class="tabs" id="navigation"></ul><!-- .tabs #navigation -->
 			</div>
 			<?php @include(dirname(__FILE__).'/header.html'); ?>
-		</div>
+		</div><!-- .span-24 .first .last #header -->
 		
 		<hr class="space">
 		
@@ -46,42 +46,52 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 					<div class="bar-left" id="bar__topleft">
 						<?php tpl_button('edit'); ?>
 				        <?php tpl_button('history'); ?>
-					</div>
+					</div><!-- .bar-left #bar__topleft -->
 					<div class="bar-right" id="bar__topright">
 						<?php tpl_button('recent')?>
 						<?php tpl_searchform(); ?>&nbsp;
-					</div>
-				</div>
+					</div><!-- .bar-right #bar__topright -->
+				</div><!-- .bar #bar__top -->
+			</div><!-- .span-24 .first .last -->
+			
+			<div class="span-24 first last" id="trace">
+				<?php
+					if (tpl_getConf('trace') == 'breadcrumbs') {
+						tpl_breadcrumbs();
+					} elseif (tpl_getConf('trace') == 'you are here') {
+						tpl_youarehere();
+					}
+				?>
 			</div>
 			
 			<?php if(tpl_sidebar_hide()) { ?>
 				<div class="span-24 first last" id="body">
-					<?php echo tpl_content(); ?>
-				</div>
+					<?php tpl_content(); ?>
+				</div><!-- .span-21 .first .last #body -->
 			<?php } elseif(tpl_getConf('sidebar') == 'left') { ?>
 				<div class="span-6 prepend-1 colborder first" id="sidebar">
 					<?php tpl_sidebar('left') ?>
-				</div>
+				</div><!-- .span-6 .first #sidebar -->
 				<div class="span-15 last" id="body">
 					<?php @include(dirname(__FILE__).'/pageheader.html'); ?>
-					<?php echo tpl_content(); ?>
+					<?php tpl_content(); ?>
 					<?php @include(dirname(__FILE__).'/pagefooter.html'); ?>
-				</div>
+				</div><!-- .span-15 .last #body -->
 			<?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
 				<div class="span-15 prepend-1 colborder first" id="body">
 					<?php @include(dirname(__FILE__).'/pageheader.html'); ?>
-					<?php echo tpl_content(); ?>
+					<?php tpl_content(); ?>
 					<?php @include(dirname(__FILE__).'/pagefooter.html'); ?>
-				</div>
+				</div><!-- .span-15 .prepend-1 .colborder .first #body -->
 				<div class="span-6 last" id="sidebar">
 					<?php tpl_sidebar('right') ?>
-				</div>
+				</div><!-- .span-6 .last #sidebar -->
 			<?php } else { ?>
-				<div class="span-21 first last" id="body">
-					<?php echo tpl_content(); ?>
-				</div>
+				<div class="span-24 first last" id="body">
+					<?php tpl_content(); ?>
+				</div><!-- .span-21 .first .last #body -->
 			<?php } ?>
-		</div>
+		</div><!-- #body_sidebar -->
 		
 		<?php flush(); ?>
 		
@@ -94,7 +104,7 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 				<div class="bar-left" id="bar__bottomleft">
 					<?php tpl_button('edit'); ?>
 					<?php tpl_button('history'); ?>
-				</div>
+				</div><!-- .bar-left #bar__bottomleft -->
 				<div class="bar-right" id="bar__bottomright">
 					<?php tpl_button('subscribe'); ?>
 					<?php tpl_button('subscribens'); ?>
@@ -103,11 +113,12 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 					<?php tpl_button('login'); ?>
 					<?php tpl_button('index'); ?>
 					<?php tpl_button('top'); ?>&nbsp;
-				</div>
+				</div><!-- .bar-right #bar__bottomright -->
 				<div class="clearer"></div>
-			</div>
-		</div>
-	</div>
+			</div><!-- .bar #bar__bottom -->
+		</div><!-- .span-24 .first .last #footer -->
+	</div><!-- .container -->
+	
 	<div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug(); ?></div>
 	
 	<?php if (tpl_getConf('google_analytics_code')): ?>

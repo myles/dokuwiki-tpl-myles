@@ -115,3 +115,9 @@ div.toc div#toc__header { font-size: 1.2em; }
 ul.toc li.level1 {  }
 ul.toc li.level2 { margin-left: 1em; }
 ul.toc li.level3 { margin-left: 2em; }
+
+/* Trace */
+div#trace { height: 1.5em; border: 1px solid #dedede; border-left: none; border-right: none; }
+div#trace a { color: #c4c4c4; padding-left: .75em; font-size: 1em; }
+div#trace a:link, div#trace a:visited { color: #c4c4c4; text-decoration: none; }
+div#trace a:hover, div#trace a:focus { color: #069; text-decoration: none; }

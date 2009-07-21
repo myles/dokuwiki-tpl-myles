@@ -27,7 +27,7 @@ if (!defined('DOKU_INC')) die();
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>img/favicon.ico" />
+  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 </head>
 
 <body>

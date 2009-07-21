@@ -115,6 +115,7 @@ if (!defined('DOKU_INC')) die();
         <?php tpl_button('history'); ?>
       </div>
       <div class="bar-right" id="bar__bottomright">
+        <?php if (!plugin_isdisabled('add_page') && ($add_page =& plugin_load('helper', 'add_page'))) $add_page->html_add_page_button(); ?>
         <?php tpl_button('subscribe'); ?>
         <?php tpl_button('subscribens'); ?>
         <?php tpl_button('admin'); ?>

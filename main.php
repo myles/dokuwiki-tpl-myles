@@ -112,10 +112,10 @@ if (!defined('DOKU_INC')) die();
     <div class="bar" id="bar__bottom">
       <div class="bar-left" id="bar__bottomleft">
         <?php tpl_button('edit'); ?>
+        <?php if (!plugin_isdisabled('add_page') && ($add_page =& plugin_load('helper', 'add_page'))) $add_page->html_add_page_button(); ?>
         <?php tpl_button('history'); ?>
       </div>
       <div class="bar-right" id="bar__bottomright">
-        <?php if (!plugin_isdisabled('add_page') && ($add_page =& plugin_load('helper', 'add_page'))) $add_page->html_add_page_button(); ?>
         <?php tpl_button('subscribe'); ?>
         <?php tpl_button('subscribens'); ?>
         <?php tpl_button('admin'); ?>
